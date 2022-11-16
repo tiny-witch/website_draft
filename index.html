@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- include scripts, cdn -->
+
+    <!-- JQUERY Core 3.6.1 minified CDN: -->
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!-- GSAP CDN -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script> -->
+
+
+<link rel="preload" href="ChampagneCartelRegular.woff2" as="font" type="font/woff2" crossorigin>
+
+
+<link href="https://api.fontshare.com/v2/css?f[]=boska@701,201,301,400,200,300&f[]=nunito@300,400&f[]=melodrama@600&display=swap" rel="stylesheet">
+
+
+
+
+    <!-- stylesheet: -->
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+    
+
+    <script >
+
+window.onload = function() {
+   
+
+      //   var color = [
+      //   "rgb(66, 66, 66)",
+      //   "rgb(160, 110, 110)"
+
+      // ];
+      const elem = document.getElementById('gallery');
+              for (let i=1; i<10; i++)
+              {
+
+                          var d=document.createElement("div");
+                          
+                          // elem.appendChild(d);
+                          var img = document.createElement("img");
+                        
+                          var desc=document.createElement("div");
+                          var head=document.createElement("h1");
+                          var p=document.createElement("p");
+                          head.innerHTML=`header${i}`;
+                          p.innerHTML=`paragraph${i}`;
+                          img.src = `./assets/images/kitten${i}.jpeg`;
+                          // var src = document.getElementById("header");
+                          // d.appendChild(img);
+                          // d.innerHTML=`kitten${i}.jpeg`;
+                          // d.style.backgroundImage=`url("./assets/images/kitten${i}.jpeg")`;
+                          // d.style.backgroundColor = color[i];
+                          d.className="image";
+                          desc.className="desc";
+                          elem.append(d);
+                        d.append(img,desc);
+                        desc.append(head,p);
+                        // d.append(img);
+
+              }
+            };
+
+      </script>
+</head>
+<body>
+ 
+        <!-- NAVBAR: -->
+        <header class = "mdn">
+            <div class="navbar">
+                <a class="navlogo">NN</a>
+                <button class="hamburger">
+                  <svg width="56" height="42" viewBox="0 0 56 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="32" width="56" height="10" rx="4" fill="#FAFAFA"/>
+                    <rect y="16" width="56" height="10" rx="4" fill="#FAFAFA"/>
+                    <rect width="56" height="10" rx="4" fill="#FAFAFA"/>
+                    </svg>                    
+                  </button>
+                <div class="navlinkwrap">
+                  <span class="navlink selectedlink">Home</span>
+                </div>
+                <div class="buttonwrap">
+                  <button class="createbtn selectedbtn">CONTACT</button>
+                </div>
+              </div>
+
+        </header>
+
+        <main>
+
+            <div class="container">
+
+                <div class="items" id="container" >
+
+                    <div id="item0" class="item">Nancy</div>
+                    <div id="item1" class="item">M. Nichols</div>
+
+                </div>
+               
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium magnam aliquam sequi qui quisquam!</p>
+              </div>
+     
+  <div class="about">
+      <h1>About </h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere praesentium quos corporis mollitia aliquid velit.</p>
+      
+  </div>
+
+  <div id="gallery">
+
+
+</div>
+
+        </main>
+            
+<div class="footer">
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus harum maxime aliquid adipisci? Odio asperiores illo placeat ipsum quod repudiandae natus quas ut incidunt, ducimus esse nesciunt, deserunt quos saepe.</p>
+</div>
+         
+
+           
+<script src="./assets/scripts/myscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preload" href="ChampagneCartelRegular.woff2" as="font" type="font/woff2" crossorigin> -->
+    <link rel="preload" href="ChampagneCartelRegular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <style>
+        :root {
+  --main-bg-color: #161616;
+}
+/* color: var(--main-color); */
+body {
+background-color: var(--main-bg-color);
+  color:white;
+  height: 1000px;
+    font-family: 'Champagne Cartel';
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.container {
+    font-family: 'Champagne Cartel';
+  display: block;
+  justify-content: space-between;
+  
+}
+
+.item {
+    margin: 0px 0px 20px 0px;
+
+  /* background-color: red; */
+  width: 100%;
+  text-transform: uppercase;
+  /* letter-spacing: .2rem; */
+  font-family: 'Champagne Cartel';
+  height: 20vw;
+  text-align: center;
+  line-height: 20vw;
+  font-size: 20vw;
+  /* font-family: Arial; */
+  font-style: italic;
+  color: #ffffff;
+  transition: cubic-bezier(0.18, 0.4, 0, 0.98) 700ms;
+  /* transition-delay:1ms ; */
+
+}
+    </style>
+</head>
+
+<body>
+    <h1>Transforms on Scroll</h1>
+<p>Code from tutorial: <a href="http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript" target="_blank">http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript</a></p>
+
+<div class="container" id="container" >
+  <div id="item0" class="item">Nancy</div>
+  <div id="item1" class="item">Nichols</div>
+</div>
+<script>
+    // Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
+
+var leftItem = document.getElementById('item0'),
+
+    rightItem = document.getElementById('item1');
+
+;(function(){
+
+  var throttle = function(type, name, obj){
+    var obj = obj || window;
+    var running = false;
+    var func = function(){
+      if (running){ return; }
+      running = true;
+      requestAnimationFrame(function(){
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+      });
+    };
+    obj.addEventListener(type, func);
+  };
+  
+  throttle("scroll", "optimizedScroll");
+})();
+
+
+
+// Get the navbar
+const container=document.getElementById('container');
+
+// Get the offset position of the navbar
+const sticky = 0;
+const total = container.offsetTop+ container.offsetHeight-50;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove the sticky class when you leave the scroll position.
+
+
+window.addEventListener("optimizedScroll", function(){
+  
+
+  if (window.pageYOffset >= sticky && window.pageYOffset <= total) {
+
+   
+    leftItem.style.transform ="translate("+(window.pageYOffset/ total)*150+ "%)";
+  
+  rightItem.style.transform = "translate(-"+(window.pageYOffset/ total)*100 + "%";
+
+
+  } else if(window.pageYOffset < sticky ){
+    leftItem.style.transform ="translate("+0+ "%)";
+  rightItem.style.transform = "translate(-"+0+ "%)";
+//   }else(window.pageYOffset > total) {
+//     leftItem.style.transform ="translate("+100+ "%)";
+  
+//   rightItem.style.transform = "translate(-"+100+ "%)";
+  }
+})
+</script>
+</body>
+</html>

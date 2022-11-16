@@ -1,0 +1,40 @@
+
+#gallery {
+    line-height:0;
+    -webkit-column-count:5; /* split it into 5 columns */
+    -webkit-column-gap:5px; /* give it a 5px gap between columns */
+    -moz-column-count:5;
+    -moz-column-gap:5px;
+    column-count:5;
+    column-gap:10px;
+   .image{
+    filter: grayscale(100%);
+    // padding: 20px;
+    // font-size: 12px;
+    overflow: hidden;
+  z-index: 0;
+  font-family: "Ubuntu", sans-serif;
+    // transition: filter transform z-index ease-in-out .2s;
+    transition: filter ease-in 100ms, transform ease-in 100ms;
+    &:hover {
+      filter:none;
+   }
+   &:active{
+transform: scale(0.98);
+   }
+    .desc{
+      display: none;
+      h1{
+        font-size: 18px; margin: 2px 0;}
+      p {font-size: 14px;}
+    }
+    
+      img {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom:5px; /* to match column gap */
+    }
+    }
+  
+  }
+  

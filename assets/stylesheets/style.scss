@@ -1,0 +1,73 @@
+// https://dev.to/inverseswirl/how-to-add-keyframes-animation-code-in-scss-46k8
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+// font-family: 'Boska', serif;
+// font-family: 'Nunito', sans-serif;
+// font-family: 'Melodrama', serif;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+// VARIABLES:
+$base-color: #c6538c;
+$border-dark: rgba($base-color, 0.88);
+$hero-bg-color:#2a2a2a;
+$main-bg-color: #161616;
+$main-font: 'Boska', serif;
+
+@import "./partials/mixins";
+@import "./partials/media";
+
+@import "./partials/gallery";
+@import "./partials/header";
+@import "./partials/hero";
+
+
+// @include mixins;
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color: $main-bg-color;
+   color: white;
+  // height: 1000px;
+  // font-family: 'Champagne Cartel';
+  .about, .footer, .item{
+    font-family: $main-font;   font-style:italic;}
+  p{ font-family: 'Nunito', sans-serif;}
+  main {
+    padding: 0 2%;
+    padding-top: max(10%, 100px);
+   
+  }
+}
+
+.about {
+  background-color: #4a4a4a;
+  height: 30vh;
+  padding: 20px;
+  @include animate(navfade, 1.5s, ease-in-out, 1);
+  margin-bottom: 10px;
+
+}
+.footer{
+  margin-top: 10px;
+  background-color: #2f2f2f;
+  height: 30vh;
+  padding: 20px;
+}
+
+
+
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+

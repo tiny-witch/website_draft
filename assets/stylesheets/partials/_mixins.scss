@@ -1,0 +1,18 @@
+@mixin animate($animation, $duration, $method, $times) {
+    animation: $animation $duration $method $times;
+    -webkit-animation: $animation $duration $method $times;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: $animation $duration $method $times;
+    /* Firefox < 16 */
+    -ms-animation: $animation $duration $method $times;
+    /* Internet Explorer */
+    -o-animation: $animation $duration $method $times;
+    /* Opera < 12.1 */
+    animation: $animation $duration $method $times;
+  }
+  
+  @mixin keyframes($name) {
+    @keyframes #{$name} {
+      @content;
+    }
+  }
